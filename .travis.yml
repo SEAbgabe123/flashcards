@@ -1,8 +1,16 @@
 language: java
 install: true
-
 jdk:
-  - oraclejdk8
-
+- oraclejdk8
 script:
-  - ./gradlew build
+- "./gradlew build"
+deploy:
+  provider: releases
+  user: SEAbgabe123
+  password:
+    secure: OJ9Gh1G7/fgwOZr4MfdgZFYGLz+g9n8FVk0A3YHckAeCoKHEUfom/ESCRn11LK21L2+JOORPDUKGv0jg/DJMgwGwhDTjFZ/jOlqvMDiPZdEuqcgt9dgpVf5yBWawMrmNa96h0RE5BL344HGFfkfpqev80te8Vczs1FHP8L8Yd9v4ZaSmYb0eODMFxIUQy4YO7yRmPpBQ3pwOYBkIMdZU5QOnrfA7dnlHqmf9LjOpD5wSCVAF10jgzf9E45mGhq1Xx47r76e7uRseUmNEbKUrAAgPQ+bW3DChj1PAC92Fr9y9bAZXvecyRlYTocpKhgeLFDwdM+3hQnC9YHyFlXYscKcPiVCpejNvmrHHp8/l4ccApR9NPk845IPkL7XrRIh81FGY+7OwxLnaYTd3B3y55pRGSts9YSbWaz3BAoyFsR5JcUsXVSVQuTbsF7fM5ynBXqqN4tvITsfhcY+YmI1t0T1ixDrJdrbbUeLnD8fLOnliByVbiHJOejCLqDqLx9n429va38nx/XtMX6h34F9s57Wf7PuUX2sX2qqUtYNCoJ5ynDHtZ9QyI5QLuOkdNiGLXqsq71R+s4KnJu1lt5O9ZZGRO2gSzwu3Ow2Y4NqoePRNIZUJ2VPsA3e7s88VJfw1DrQxQLtm22FMdgDtTXNVD8vI4elMgW4+GfmuVzLQv7o=
+  file_glob: true
+  file: build/**/*
+  skip_cleanup: true
+  on:
+    tags: true
