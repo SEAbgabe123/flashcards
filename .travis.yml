@@ -8,5 +8,10 @@ deploy:
   provider: releases
   api_key:
     secure: adR6+WZT3qmkZ/QPLVEXE6oxsLK3UngS5IsV8bzcP8n2gS0RHuX61tzid79Dc7cdkNn2MTRs3kYNvuI4l6IWjMnf9RTWQbVZubh0ltage9gwB9LmVkUkJd2gQsB3lGdjQvNb/qp5x34L2w9BZ+GAzfFZ9wxr0XvR8Mniy4YdfUFPTJ4HRt8pXHy/nQu9fpDpgBNPllzQgDX1l46J8aDJrsjw/Vt4s5y6BtojhIaVc4yt3gay599RqHO16QAzMKuvt55iYztqdM/5MiVZH4/YB/aCmItYG2CyogOdFcoUMt1MLf5FYSMMTvPUJ6gOcvDQVwJyeOcJ/dF+qoWAHMJiA49VoOnOaVNEFULtKiO1JaSPJOOit63ATOUrINEnUbGpRFfZegl8Znr7vM8suGK0VlqoSNayC4WpFeOHN3VYhE4SGRnN3fvQD+lD0xSfGnIwjYnXdT2fLOW02gwFLjNyvyRm0MKIbRbPSY6mr1l7Zfn3uE5goUIQwTUyFhaR45/aWltrwycrMxmmuUowFCoH5qXvw8whvc91GsMWuS0FwLJITnxOrdOmiSKuTu0COkSgyYnAl97iZ6grNA+Tauw8LdByExi4rV9uZ3jRiMnFbD+poFh3ySHaL3ZdsQ1IotkCNWVfEfjHwmGQuE7D8uwhAe7jnTEorWAbaVI5Y7K1paE=
-  file_glob: true
-  file: build/**/*
+  skip_cleanup: true
+  file:
+    - build/reports/spotbugs/main.xml
+    - build/reports/spotbugs/test.xml
+    - build/reports/checkstyle/main.html
+    - build/reports/checkstyle/test.html
+    - build/libs/flashcards.jar
